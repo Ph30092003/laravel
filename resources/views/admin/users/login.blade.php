@@ -4,7 +4,7 @@
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:11:31 GMT -->
 <head>
-    @include('admin.header');
+    @include('admin.headlink');
 </head>
 
 <body>
@@ -16,7 +16,6 @@
                         <div class="log-in-title">
                             <h3>Welcome To Fastkart</h3>
                         </div>
-
                         <div class="input-box">
                             <form class="row g-4" action="/admin/users/login/store" method="post">
                                 <div class="col-12">
@@ -37,14 +36,14 @@
                                 <div class="col-12">
                                     <div class="forgot-box">
                                         <div class="form-check ps-0 m-0 remember-box">
-                                            <input class="checkbox_animated check-box" type="checkbox" name="checkbox"
+                                            <input class="checkbox_animated check-box" type="checkbox" name="remember"
                                                 id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                                         </div>
                                         <a href="forgot.html" class="forgot-password">Forgot Password?</a>
                                     </div>
                                 </div>
-
+                                @include('admin.error')
                                 <div class="col-12">
                                     <button class="btn btn-animation w-100 justify-content-center" type="submit">Log
                                         In</button>
@@ -89,7 +88,7 @@
     </section>
     <!-- log in section end -->
 </body>
-    @include('admin.footer');
+    @include('admin.footlink');
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jul 2023 08:11:31 GMT -->
 </html>

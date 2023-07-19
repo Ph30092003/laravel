@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class a extends Controller
+use Illuminate\Support\Facades\Auth;
+class MainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class a extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.home',[
+            'title' => 'Trang quản trị admin'
+        ]);
     }
 
     /**
