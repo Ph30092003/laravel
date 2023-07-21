@@ -2,7 +2,7 @@
     <div id="sidebarEffect"></div>
     <div>
         <div class="logo-wrapper logo-wrapper-center">
-            <a href="index.html" data-bs-original-title="" title="">
+            <a href="/admin" data-bs-original-title="" title="">
                 <img class="img-fluid for-white" src="/template/admin/assets-backend/images/logo/full-white.png" alt="logo">
             </a>
             <div class="back-btn">
@@ -58,11 +58,11 @@
                         </a>
                         <ul class="sidebar-submenu">
                             <li>
-                                <a href="/admin/menus/categorylist">Category List</a>
+                                <a href="/admin/category/list">Category List</a>
                             </li>
 
                             <li>
-                                <a href="/admin/menus/categorynew">Add New Category</a>
+                                <a href="/admin/category/add">Add New Category</a>
                             </li>
                         </ul>
                     </li>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\Menu\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,17 @@ Route::post('admin/users/login/store',[LoginController::class,'store']);
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('admin',[MainController::class,'index'])->name('admin');
-    Route::get('admin/main',[MainController::class,'index']);
+
+    Route::prefix('admin')->group(function () {
+        //Phương thức này prefix có thể được sử dụng để thêm tiền tố cho mỗi tuyến đường trong nhóm bằng một URI nhất định.
+        //Ví dụ: bạn có thể muốn thêm tiền tố vào tất cả các URI tuyến đường trong nhóm bằng admin:
+        Route::get('/',[MainController::class,'index'])->name('admin');
+        Route::get('main',[MainController::class,'index']);
+
+        #category
+        Route::prefix('category')->group(function () {
+            Route::get('add',[CategoryController::class,'create']);
+        });
+    });
+
 });

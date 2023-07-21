@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Menu;
 
+use App\Models\Menu\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categorys = Category::get(); //Lấy dữ liệu từ bảng category
+        return view('admin.category.list',['categorys' => $categorys]);
     }
 
     /**
@@ -24,7 +26,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.add',[
+            'title' => 'Thêm danh mục sản phẩm',
+        ]);
     }
 
     /**
